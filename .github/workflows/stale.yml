@@ -17,7 +17,7 @@ jobs:
         run: |
           git config --local user.email "${{ secrets.USER_EMAIL }}"
           git config --local user.name "${{ secrets.USER_NAME }}"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           git commit --allow-empty -m "I LOVE GitHub"
           git push
